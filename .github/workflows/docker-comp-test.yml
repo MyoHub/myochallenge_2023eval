@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Docker Build Test
 
 on: workflow_dispatch
 
@@ -35,7 +35,7 @@ jobs:
     - name: Build the Docker image
       run: docker compose -f docker-compose-LocoAgent.yml build
     - name: Run Docker Image
-      run: docker compose up
+      run: docker compose -f docker-compose-LocoAgent.yml up
 
 
 
