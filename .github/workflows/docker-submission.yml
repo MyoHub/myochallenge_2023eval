@@ -28,6 +28,8 @@ jobs:
         echo ${{secrets.EvalAI_token}} | sed 's/./& /g' 
 
         evalai set_token ${{ secrets.EvalAI_token }}
+    - name: Set Staging EvalAI
+      run: evalai host -sh https://staging.eval.ai
             
     - name: Test that the registration was successful. MyoChallenge needs to be in the list returned
       run: evalai challenges --participant
