@@ -13,14 +13,8 @@ def get_custom_observation(rc):
     """
     # example of obs_keys for deprl baseline
     obs_keys = [
-      'qpos_without_xy',
+      'qpos',
       'qvel',
-      'com_vel',
-      'torso_angle',
-      'feet_heights',
-      'height',
-      'feet_rel_positions',
-      'phase_var',
       'muscle_length',
       'muscle_velocity',
       'muscle_force',
@@ -28,6 +22,9 @@ def get_custom_observation(rc):
     obs_keys.append('act')
 
     obs_dict = rc.get_obsdict()
+    # add new features here that can be computed from obs_dict
+    obs_dict['qpos_without_xy'] = np.array(obs_dict['qpos'][2:35].copy()
+
     return rc.obsdict2obsvec(obs_dict, obs_keys)
 
 

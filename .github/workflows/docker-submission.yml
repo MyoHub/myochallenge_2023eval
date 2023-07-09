@@ -36,7 +36,7 @@ jobs:
       run: docker compose -f docker-compose-LocoAgent.yml build
 
     - name: Push to evalai
-      run: evalai push myochallenge2023eval-loco_agent --phase myochallenge2023-locophase1-783 --private
+      run: evalai push myochallenge2023eval-loco_agent:latest --phase myochallenge2023-locophase1-783 --private
 
 
 
