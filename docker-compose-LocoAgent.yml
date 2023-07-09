@@ -1,6 +1,6 @@
 version: '3'
 services:
-  bb_agent:
+  loco_agent:
     hostname: agent
     env_file:
       - docker/agent/docker.env

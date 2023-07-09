@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10\x65valuation.proto\x12\nevaluation\"#\n\x07Package\x12\x18\n\x10SerializedEntity\x18\x01 \x01(\x0c\x32\xc2\x02\n\x0b\x45nvironment\x12\x33\n\x05reset\x12\x13.evaluation.Package\x1a\x13.evaluation.Package\"\x00\x12>\n\x10get_action_space\x12\x13.evaluation.Package\x1a\x13.evaluation.Package\"\x00\x12@\n\x12\x61\x63t_on_environment\x12\x13.evaluation.Package\x1a\x13.evaluation.Package\"\x00\x12=\n\x0fget_output_keys\x12\x13.evaluation.Package\x1a\x13.evaluation.Package\"\x00\x12=\n\x0fset_output_keys\x12\x13.evaluation.Package\x1a\x13.evaluation.Package\"\x00\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10\x65valuation.proto\x12\nevaluation\"#\n\x07Package\x12\x18\n\x10SerializedEntity\x18\x01 \x01(\x0c\x32\xc4\x02\n\x0b\x45nvironment\x12\x33\n\x05reset\x12\x13.evaluation.Package\x1a\x13.evaluation.Package\"\x00\x12>\n\x10get_action_space\x12\x13.evaluation.Package\x1a\x13.evaluation.Package\"\x00\x12\x43\n\x15get_observation_space\x12\x13.evaluation.Package\x1a\x13.evaluation.Package\"\x00\x12\x39\n\x0bget_obsdict\x12\x13.evaluation.Package\x1a\x13.evaluation.Package\"\x00\x12@\n\x12\x61\x63t_on_environment\x12\x13.evaluation.Package\x1a\x13.evaluation.Package\"\x00\x62\x06proto3')
 
 
 
@@ -33,5 +33,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _PACKAGE._serialized_start=32
   _PACKAGE._serialized_end=67
   _ENVIRONMENT._serialized_start=70
-  _ENVIRONMENT._serialized_end=392
+  _ENVIRONMENT._serialized_end=394
 # @@protoc_insertion_point(module_scope)

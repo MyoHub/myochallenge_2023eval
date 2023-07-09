@@ -19,19 +19,22 @@ EVALUATION_COMPLETED = False
 import myosuite
 
 class evaluator_environment:
-    def __init__(self, environment="myoChallengeDieReorientP1-v0"):
+    def __init__(self, environment="myoChallengeDieReorient-v0"):
         self.score = 0
         self.feedback = None
         self.env = gym.make(environment)
-
-    def set_output_keys(self, key_set):
-        self.env = gym.make(self.environment, obs_keys = key_set)
 
     def reset(self):
         return self.env.reset()
 
     def get_action_space(self):
         return len(self.env.action_space.sample())
+
+    def get_observation_space(self):
+        return len(self.env.observation_space.sample())
+
+    def get_obsdict(self):
+        return self.env.get_obs_dict(self.env.sim)
 
     def next_score(self):
         self.score += 1
@@ -46,17 +49,6 @@ class Environment(evaluation_pb2_grpc.EnvironmentServicer):
         self.iter = 0
         self.repetition = 0
 
-    def get_output_keys(self, request, context):
-        message = pack_for_grpc(env.env.obs_keys)
-        return evaluation_pb2.Package(SerializedEntity=message)
-
-    def set_output_keys(self, request, context):
-        new_out_keys = unpack_for_grpc(request.SerializedEntity)
-
-        message = pack_for_grpc(env.set_output_keys(new_out_keys))
-        return evaluation_pb2.Package(SerializedEntity=message)
-
-
     def reset(self, request, context):
         self.score = 0
         self.iter = 0
@@ -68,6 +60,15 @@ class Environment(evaluation_pb2_grpc.EnvironmentServicer):
     def get_action_space(self, request, context):
         message = pack_for_grpc(env.get_action_space())
         return evaluation_pb2.Package(SerializedEntity=message)
+
+    def get_observation_space(self, request, context):
+        message = pack_for_grpc(env.get_observation_space())
+        return evaluation_pb2.Package(SerializedEntity=message)
+
+    def get_obsdict(self, request, context):
+        message = pack_for_grpc(env.get_obsdict())
+        return evaluation_pb2.Package(SerializedEntity=message)
+
 
     def act_on_environment(self, request, context):
         global EVALUATION_COMPLETED
@@ -103,10 +104,6 @@ def unpack_for_grpc(entity):
 
 def reset(self):
     return env.reset()
-
-def get_action_space(self):
-    return len(env.action_space.sample())
-
 
 
 

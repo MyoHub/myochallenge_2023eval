@@ -50,6 +50,12 @@ Install EvalAI Command Line Interface (*evalai-cli*)
 pip install "evalai>=1.3.13"
 ```
 
+You might need to install evalai dependencies first:
+
+```bash
+sudo apt-get install libxml2-dev libxslt-dev
+```
+
 [⚠️ IMPORTANT ⚠️] Each team needs to be registered to obtain a specific token to identify it (see [instructions](https://evalai.readthedocs.io/en/latest/participate.html)). After registration, it is possible to add the EvalAI account token to via evalai-cli (full list of commands [here](https://cli.eval.ai/)) with the following command:
 ``` bash
 # Register the tocken to identify your contribution

@@ -3,6 +3,6 @@ grpcio-tools==1.47.0
 protobuf==3.20.*
 numpy
 myosuite>=1.2.3
-git+https://github.com/aravindr93/mjrl.git
+# git+https://github.com/aravindr93/mjrl.git
 matplotlib
 tabulate

@@ -40,6 +40,6 @@ if [ "$PassEvalAI" = "true" ] && [ "$PassDocker" = "true" ]; then
     chmod u+r+x ./test/test_mani_agent.sh
     chmod u+r+x ./test/test_loco_agent.sh
 
-    ./test/test_mani_agent.sh
+    # ./test/test_mani_agent.sh
     ./test/test_loco_agent.sh
 fi

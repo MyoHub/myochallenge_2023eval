@@ -24,18 +24,18 @@ class EnvironmentStub(object):
                 request_serializer=evaluation__pb2.Package.SerializeToString,
                 response_deserializer=evaluation__pb2.Package.FromString,
                 )
+        self.get_observation_space = channel.unary_unary(
+                '/evaluation.Environment/get_observation_space',
+                request_serializer=evaluation__pb2.Package.SerializeToString,
+                response_deserializer=evaluation__pb2.Package.FromString,
+                )
+        self.get_obsdict = channel.unary_unary(
+                '/evaluation.Environment/get_obsdict',
+                request_serializer=evaluation__pb2.Package.SerializeToString,
+                response_deserializer=evaluation__pb2.Package.FromString,
+                )
         self.act_on_environment = channel.unary_unary(
                 '/evaluation.Environment/act_on_environment',
-                request_serializer=evaluation__pb2.Package.SerializeToString,
-                response_deserializer=evaluation__pb2.Package.FromString,
-                )
-        self.get_output_keys = channel.unary_unary(
-                '/evaluation.Environment/get_output_keys',
-                request_serializer=evaluation__pb2.Package.SerializeToString,
-                response_deserializer=evaluation__pb2.Package.FromString,
-                )
-        self.set_output_keys = channel.unary_unary(
-                '/evaluation.Environment/set_output_keys',
                 request_serializer=evaluation__pb2.Package.SerializeToString,
                 response_deserializer=evaluation__pb2.Package.FromString,
                 )
@@ -56,19 +56,19 @@ class EnvironmentServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def get_observation_space(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def get_obsdict(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def act_on_environment(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def get_output_keys(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def set_output_keys(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -87,18 +87,18 @@ def add_EnvironmentServicer_to_server(servicer, server):
                     request_deserializer=evaluation__pb2.Package.FromString,
                     response_serializer=evaluation__pb2.Package.SerializeToString,
             ),
+            'get_observation_space': grpc.unary_unary_rpc_method_handler(
+                    servicer.get_observation_space,
+                    request_deserializer=evaluation__pb2.Package.FromString,
+                    response_serializer=evaluation__pb2.Package.SerializeToString,
+            ),
+            'get_obsdict': grpc.unary_unary_rpc_method_handler(
+                    servicer.get_obsdict,
+                    request_deserializer=evaluation__pb2.Package.FromString,
+                    response_serializer=evaluation__pb2.Package.SerializeToString,
+            ),
             'act_on_environment': grpc.unary_unary_rpc_method_handler(
                     servicer.act_on_environment,
-                    request_deserializer=evaluation__pb2.Package.FromString,
-                    response_serializer=evaluation__pb2.Package.SerializeToString,
-            ),
-            'get_output_keys': grpc.unary_unary_rpc_method_handler(
-                    servicer.get_output_keys,
-                    request_deserializer=evaluation__pb2.Package.FromString,
-                    response_serializer=evaluation__pb2.Package.SerializeToString,
-            ),
-            'set_output_keys': grpc.unary_unary_rpc_method_handler(
-                    servicer.set_output_keys,
                     request_deserializer=evaluation__pb2.Package.FromString,
                     response_serializer=evaluation__pb2.Package.SerializeToString,
             ),
@@ -147,6 +147,40 @@ class Environment(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
+    def get_observation_space(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/evaluation.Environment/get_observation_space',
+            evaluation__pb2.Package.SerializeToString,
+            evaluation__pb2.Package.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def get_obsdict(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/evaluation.Environment/get_obsdict',
+            evaluation__pb2.Package.SerializeToString,
+            evaluation__pb2.Package.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
     def act_on_environment(request,
             target,
             options=(),
@@ -158,40 +192,6 @@ class Environment(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/evaluation.Environment/act_on_environment',
-            evaluation__pb2.Package.SerializeToString,
-            evaluation__pb2.Package.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def get_output_keys(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/evaluation.Environment/get_output_keys',
-            evaluation__pb2.Package.SerializeToString,
-            evaluation__pb2.Package.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def set_output_keys(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/evaluation.Environment/set_output_keys',
             evaluation__pb2.Package.SerializeToString,
             evaluation__pb2.Package.FromString,
             options, channel_credentials,
