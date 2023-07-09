@@ -33,7 +33,9 @@ jobs:
       run: evalai challenges --participant
     
     - name: Build the Docker image
-      run: docker compose -f docker-compose-LocoAgent.yml build
+      run: |
+        docker compose -f docker-compose-LocoAgent.yml build
+        docker image list 
 
     - name: Push to evalai
       run: evalai push myochallenge2023eval-loco_agent:latest --phase myochallenge2023-locophase1-783 --private
