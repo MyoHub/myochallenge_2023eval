@@ -37,7 +37,9 @@ jobs:
       run: evalai challenges --participant
     
     - name: Build the Docker image
-      run: docker build -f docker/agent/Dockerfile_DieEnv . -t myochallengeeval_die_agent
-      
+      run: docker compose -f docker-compose-LocoAgent.yml build
+    - name: Run Docker Image
+      run: docker compose up
+
 
 
