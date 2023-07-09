@@ -38,7 +38,7 @@ jobs:
         docker image list 
 
     - name: Push to evalai
-      run: evalai push myochallenge2023eval-loco_agent:latest --phase myochallenge2023-locophase1-783 --private
+      run: evalai push challenge_eval2023-loco_agent:latest --phase myochallenge2023-locophase1-783 --private
 
 
 
