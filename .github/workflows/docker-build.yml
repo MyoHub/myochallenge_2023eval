@@ -1,9 +1,6 @@
-name: Docker Image CI
+name: Docker Build Test
 
-on:
-  push:
-    branches: [ "submission" ]
-
+on: workflow_dispatch
 
 jobs:
 
@@ -36,7 +33,7 @@ jobs:
       run: evalai challenges --participant
     
     - name: Build the Docker image
-      run: docker build -f docker/agent/Dockerfile_DieEnv . -t myochallengeeval_die_agent
-      
-    - name: Upload policy
-      run: evalai push myochallengeeval_die_agent:latest --phase myochallenge-diephase1-1844 --public
+      run: docker compose -f docker-compose-LocoAgent.yml build
+
+
+
