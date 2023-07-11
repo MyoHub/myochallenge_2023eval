@@ -1,19 +1,23 @@
 [![Supported by MyoSuite](https://img.shields.io/static/v1?label=Supported%20by&message=MyoSuite&color=informational&link=https://github.com/facebookresearch/myosuite)](https://github.com/facebookresearch/myosuite)
 [![Twitter Follow](https://img.shields.io/twitter/follow/MyoChallenge?style=social)](https://twitter.com/MyoChallenge)
 
-# 2022 NeurIPS - MyoChallenge
+# 2023 NeurIPS - MyoChallenge
 
 <p align="center">
   <img src='./images/challenge_tasks.png' alt="teaser results" width="50%"/>
   <p align="center"><i>MyoChallenge Tasks</i></p>
 </p>
 
-Welcome to the [**2022 NeurIPS - MyoChallenge: Learning contact-rich manipulation using a musculoskeletal hand**](https://sites.google.com/view/myochallenge/myochallenge).
+Welcome to the [**2023 NeurIPS - MyoChallenge:  Towards Human-Level Dexterity and Agility**](https://https://sites.google.com/view/myosuite/myochallenge/myochallenge-2023).
 This challenge consists of developing controllers for a physiologically realistic musculoskeletal hand to solve dexterous manipulation tasks:
 
-- A) **Manipultaion task** reconfiguring the die to match the desired orientation (`myoChallengeManiP1-v0`)
+- A) **Manipulation task** Interact with an object and relocate it (`myoChallengeRelocateP1-v0`).
 
-- B) **Locomotion/Chase-Tag task** involving simultaneous rotation of two free-floating spheres over the palm. (`myoChallengeChaseTagP1-v0`).
+- B) **Locomotion/Chase-Tag task** Chase an opponent by controlling a high-dimensional bipedal model. (`myoChallengeChaseTagP1-v0`).
+
+## Submission
+We offer this year a simplified way of submitting solutions, based on GitHub actions, as well as the process from the previous competition.
+
 
 In order to submit your solutions, please add the [prerequisites](#Prerequisites) and then follow the 4 steps below.
 In short, after the installation of the [prerequisites](#Prerequisites), the upload of a solution will follow this sequence:

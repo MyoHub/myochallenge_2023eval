@@ -4,5 +4,6 @@ protobuf==3.20.*
 numpy
 myosuite>=1.2.3
 # git+https://github.com/aravindr93/mjrl.git
+deprl
 matplotlib
 tabulate
