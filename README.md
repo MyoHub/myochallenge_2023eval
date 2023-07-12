@@ -1,15 +1,15 @@
 [![Supported by MyoSuite](https://img.shields.io/static/v1?label=Supported%20by&message=MyoSuite&color=informational&link=https://github.com/facebookresearch/myosuite)](https://github.com/facebookresearch/myosuite)
-[![Twitter Follow](https://img.shields.io/twitter/follow/MyoChallenge?style=social)](https://twitter.com/MyoChallenge)
+[![Twitter Follow](https://img.shields.io/twitter/follow/MyoChallenge?style=social)](https://twitter.com/MyoSuite)
 
-# 2022 NeurIPS - MyoChallenge
+# 2023 NeurIPS - MyoChallenge
 
 <p align="center">
   <img src='./images/challenge_tasks.png' alt="teaser results" width="50%"/>
   <p align="center"><i>MyoChallenge Tasks</i></p>
 </p>
 
-Welcome to the [**2022 NeurIPS - MyoChallenge: Learning contact-rich manipulation using a musculoskeletal hand**](https://sites.google.com/view/myochallenge/myochallenge).
-This challenge consists of developing controllers for a physiologically realistic musculoskeletal hand to solve dexterous manipulation tasks:
+Welcome to the [**2023 NeurIPS - MyoChallenge: Towards Human-Level Dexterity and Agility**](https://sites.google.com/view/myochallenge/myochallenge).
+This challenge consists of developing controllers for physiologically realistic musculoskeletal models of arm and leg to solve two tasks:
 
 - A) **Manipultaion task** reconfiguring the die to match the desired orientation (`myoChallengeManiP1-v0`)
 
