@@ -28,7 +28,7 @@ def get_custom_observation(rc):
     return rc.obsdict2obsvec(obs_dict, obs_keys)
 
 
-time.sleep(30)
+time.sleep(60)
 
 LOCAL_EVALUATION = os.environ.get("LOCAL_EVALUATION")
 

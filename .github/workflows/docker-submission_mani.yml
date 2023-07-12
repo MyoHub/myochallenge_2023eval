@@ -1,4 +1,4 @@
-name: Docker Submission Test
+name: Docker Submission Mani
 
 on: workflow_dispatch
 

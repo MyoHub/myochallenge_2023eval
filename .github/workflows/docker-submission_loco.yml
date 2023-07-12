@@ -1,4 +1,4 @@
-name: Docker Submission Test
+name: Docker Submission Loco
 
 on: workflow_dispatch
 
