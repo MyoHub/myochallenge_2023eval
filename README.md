@@ -4,7 +4,7 @@
 # 2023 NeurIPS - MyoChallenge
 
 <p align="center">
-  <img src='./images/challenge_tasks.png' alt="teaser results" width="50%"/>
+  <img src='./images/challenge_task_new.png' alt="teaser results" width="50%"/>
   <p align="center"><i>MyoChallenge Tasks</i></p>
 </p>
 
@@ -16,10 +16,9 @@ This challenge consists of developing controllers for a physiologically realisti
 - B) **Locomotion/Chase-Tag task** Chase an opponent by controlling a high-dimensional bipedal model. (`myoChallengeChaseTagP1-v0`).
 
 ## Submission
-We offer this year a simplified way of submitting solutions, based on GitHub actions, as well as the process from the previous competition.
+We offer this year a simplified way of submitting solutions, based on GitHub actions, as well as the process from the previous competition. Submission workflows are triggered automatically when new changes are pushed into your repository.
 
-
-In order to submit your solutions, please add the [prerequisites](#Prerequisites) and then follow the 4 steps below.
+For those that are familiar with evalai-cli processes, submission can be done with the following steps. Please add the [prerequisites](#Prerequisites) and then follow the 4 steps below.
 In short, after the installation of the [prerequisites](#Prerequisites), the upload of a solution will follow this sequence:
 
 ``` bash
@@ -76,9 +75,9 @@ evalai challenges --participant
 Clone this repository to have access to all needed files:
 ```bash
 # Clone the repository
-git clone https://github.com/ET-BE/myoChallengeEval.git
+git clone https://github.com/MyoHub/myoChallenge2023Eval.git
 # Enter into the root path
-cd myoChallengeEval
+cd myoChallenge2023Eval
 # Install dependencies and tests
 source ./setup.sh
 ```
@@ -93,19 +92,19 @@ More information on the training and customization are provided [here](./agent/T
 
 ## STEP 2: Customize Agent Script
 We provide 2 templates to describe how the agent will communicate with the environment during the evaluation.
--  Manipulation script ([agent_man.py](/agent/agent_mani.py))
+-  Manipulation script ([agent_mani.py](/agent/agent_mani.py))
 -  Locomotion/Chase-Tag script ([agent_loco.py](/agent/agent_loco.py))
 
-In both templates, you will need to (A) [import a policy](https://github.com/ET-BE/myoChallengeEval/blob/613410d7c80e4ea20ce7e3060f7aa751cd7e6361/agent/agent_die_rotate.py#L18) and (B) obtain [an action from each observation](https://github.com/ET-BE/myoChallengeEval/blob/613410d7c80e4ea20ce7e3060f7aa751cd7e6361/agent/agent_die_rotate.py#L40).
-it is imported a policy trained with MJRL for testing. It is important that this line is customized with the policy you have trained. It is then possible to add all the dependencies in the [requirements file](requirements/agent.txt).
+In both templates, you will need to (A) [import a policy](https://github.com/MyoHub/myoChallenge2023Eval/blob/challenge_2023/agent/agent_loco.py#L51) and (B) obtain [an action from each observation](https://github.com/MyoHub/myoChallenge2023Eval/blob/challenge_2023/agent/agent_loco.py#L72).
+This is a policy trained with DEPRL for testing. It is important to customize this file to load the policy your have trained. It is also possible to add dependencies in the [requirements file](requirements/agent.txt).
 
-Once customized the agents, it is possible to test the communication between agent and environment using the test scripts:
+A random policy is also provided for use: ([agent_random.py](/agent/agent_random.py))
+
+Once you have finished customizing the scripts, testing between the agent and environment can be performed by using the scripts below:
 - Manipulation `sh ./test/test_mani_agent.sh`
 - Locomotion/Chase-Tag `sh ./test/test_loco_agent.sh`
 
 Upon successful testing, it is possible to submit the solution following next steps.
-
-Also, an example showing how to customize the set of observations is provided: ([agent_random.py](/agent/agent_random.py))
 
 ## STEP 3: Build a docker container with the agent
 The evaluation will be based on the model submitted as a docker container. It is possible to build the docker in two ways with either directly docker build (Suggested Method) or with docker-compose (Alternative Method, this will require to install [docker-compose](https://docs.docker.com/compose/install/))
@@ -135,11 +134,9 @@ docker-compose -f docker-compose-LocoAgent.yml up --build
 </br>
 </details>
 
-
-
 ## Step 4: Upload the docker container on evalAI for evaluation
 
-Push docker image to [EvalAI docker registry](https://eval.ai/web/challenges/challenge-page/1615/submission) (it is possible to get the information about the image and TAG with the command `docker images`)
+Push docker image to [EvalAI docker registry](https://staging.eval.ai/web/challenges/challenge-page/783/submission) (it is possible to get the information about the image and TAG with the command `docker images`)
 
 ```bash
 evalai push <image>:<tag> --phase <phase_name>
@@ -147,15 +144,15 @@ evalai push <image>:<tag> --phase <phase_name>
 Use --private or --public flag in the submission command to make the submission private or public respectively.
 
 for example, commands to upload agents for Phase 1 might look like:
-- Manipultaion Agent : `evalai push myochallengeeval_die_agent:latest --phase myochallenge-diephase1-1844 --public`
+- Manipultaion Agent : `evalai push Dockerfile_Mani:latest --phase myochallenge2023-maniphase1-783 --public`
 
-- Locomotion/Chase-Tag Agent: `evalai push myochallengeeval_bb_agent:latest --phase myochallenge-bbphase1-1844 --public`
+- Locomotion/Chase-Tag Agent: `evalai push Dockerfile_Loco:latest --phase myochallenge2023-locophase1-783 --public` 
 
 and, for Phase 2 might look like:
 
-- Manipultaion Agent : `evalai push myochallengeeval_die_agent:latest --phase myochallenge-diephase2-1844 --public`
+- Manipultaion Agent : `evalai push Dockerfile_Mani:latest --phase myochallenge2023-maniphase2-783 --public`
 
-- Locomotion/Chase-Tag Agent: `evalai push myochallengeeval_bb_agent:latest --phase myochallenge-bbphase2-1844 --public`
+- Locomotion/Chase-Tag Agent: `evalai push Dockerfile_Loco:latest --phase myochallenge2023-locophase2-783 --public`
 
 
 For more commands, please refer to [evalai-cli documentation](https://cli.eval.ai/) for additional commands.

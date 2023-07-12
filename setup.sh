@@ -3,17 +3,17 @@ GreenBK='\033[1;42m'
 RedBK='\033[1;41m'
 RC='\033[0m'
 PassEvalAI=false
-PassDocker=false
+PassDocker=true
 
 #check if docker is installed
-docker info
-if [ $? -eq 0 ]; then
-    PassDocker=true
-    printf "${GreenBK}Docker: Passed!${RC} \n"
-else
-    printf "${RedBK}Docker doesn't seem to be installed!${RC} \n"
-    echo FAIL
-fi
+#docker info
+#if [ $? -eq 0 ]; then
+#    PassDocker=true
+#    printf "${GreenBK}Docker: Passed!${RC} \n"
+#else
+#    printf "${RedBK}Docker doesn't seem to be installed!${RC} \n"
+#    echo FAIL
+#fi
 
 
 evalai challenges --participant

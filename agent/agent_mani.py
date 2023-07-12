@@ -21,7 +21,7 @@ def get_custom_observation(rc):
 
     obs_dict = rc.get_obsdict()
     # add new features here that can be computed from obs_dict
-    obs_dict['qpos_without_xy'] = np.array(obs_dict['qpos'][2:].copy()
+    obs_dict['qpos_without_xy'] = np.array(obs_dict['qpos'][2:].copy())
 
     return rc.obsdict2obsvec(obs_dict, obs_keys)
 
