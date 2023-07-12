@@ -31,7 +31,6 @@ docker build -f docker/agent/Dockerfile_Mani . -t myochallengeeval_mani_agent
 evalai push myochallengeeval_mani_agent:latest --phase myochallenge2023-maniphase1-1844 --public
 
 ```
-> [⚠️ Important!] For Phase 2 environment, please upgrade to MyoSuite >= 1.2.3
 
 ## Prerequisites
 <details closed>
