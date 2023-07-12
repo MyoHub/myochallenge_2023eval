@@ -8,7 +8,8 @@
   <p align="center"><i>MyoChallenge Tasks</i></p>
 </p>
 
-Welcome to the [**2023 NeurIPS - MyoChallenge:  Towards Human-Level Dexterity and Agility**](https://https://sites.google.com/view/myosuite/myochallenge/myochallenge-2023).
+Welcome to the [**2023 NeurIPS - MyoChallenge:  Towards Human-Level Dexterity and Agility**](https://sites.google.com/view/myosuite/myochallenge/myochallenge-2023).
+
 This challenge consists of developing controllers for a physiologically realistic musculoskeletal hand to solve dexterous manipulation tasks:
 
 - A) **Manipulation task** Interact with an object and relocate it (`myoChallengeRelocateP1-v0`).
