@@ -1,5 +1,6 @@
 [![Supported by MyoSuite](https://img.shields.io/static/v1?label=Supported%20by&message=MyoSuite&color=informational&link=https://github.com/facebookresearch/myosuite)](https://github.com/facebookresearch/myosuite)
-[![Twitter Follow](https://img.shields.io/twitter/follow/MyoChallenge?style=social)](https://twitter.com/MyoSuite)
+
+[![Twitter Follow](https://img.shields.io/twitter/follow/MyoSuite?style=social)](https://twitter.com/MyoSuite)
 
 # 2023 NeurIPS - MyoChallenge
 
@@ -15,6 +16,7 @@ This challenge consists of developing controllers for a physiologically realisti
 - A) **Manipulation task** Interact with an object and relocate it (`myoChallengeRelocateP1-v0`).
 
 - B) **Locomotion/Chase-Tag task** Chase an opponent by controlling a high-dimensional bipedal model. (`myoChallengeChaseTagP1-v0`).
+
 
 ## Submission
 We offer this year a simplified way of submitting solutions, based on GitHub actions, as well as the process from the previous competition. Submission workflows are triggered automatically when new changes are pushed into your repository.
@@ -32,10 +34,9 @@ sh ./test/test_mani_agent.sh
 docker build -f docker/agent/Dockerfile_Mani . -t myochallengeeval_mani_agent
 
 # Step 4: Upload policy
-evalai push myochallengeeval_mani_agent:latest --phase myochallenge2023-maniphase1-1844 --public
+evalai push myochallengeeval_mani_agent:latest --phase myochallenge2023-maniphase1-2105 --public
 
 ```
-> [⚠️ Important!] For Phase 2 environment, please upgrade to MyoSuite >= 1.2.3
 
 ## Prerequisites
 <details closed>
@@ -137,7 +138,7 @@ docker-compose -f docker-compose-LocoAgent.yml up --build
 
 ## Step 4: Upload the docker container on evalAI for evaluation
 
-Push docker image to [EvalAI docker registry](https://staging.eval.ai/web/challenges/challenge-page/783/submission) (it is possible to get the information about the image and TAG with the command `docker images`)
+Push docker image to [EvalAI docker registry](https://eval.ai/web/challenges/challenge-page/2105/submission) (it is possible to get the information about the image and TAG with the command `docker images`)
 
 ```bash
 evalai push <image>:<tag> --phase <phase_name>
@@ -145,16 +146,16 @@ evalai push <image>:<tag> --phase <phase_name>
 Use --private or --public flag in the submission command to make the submission private or public respectively.
 
 for example, commands to upload agents for Phase 1 might look like:
-- Manipultaion Agent : `evalai push Dockerfile_Mani:latest --phase myochallenge2023-maniphase1-783 --public`
+- Manipultaion Agent : `evalai push Dockerfile_Mani:latest --phase myochallenge2023-maniphase1-2105 --public`
 
-- Locomotion/Chase-Tag Agent: `evalai push Dockerfile_Loco:latest --phase myochallenge2023-locophase1-783 --public` 
+- Locomotion/Chase-Tag Agent: `evalai push Dockerfile_Loco:latest --phase myochallenge2023-locophase1-2105 --public` 
 
-and, for Phase 2 might look like:
+<!-- and, for Phase 2 might look like:
 
-- Manipultaion Agent : `evalai push Dockerfile_Mani:latest --phase myochallenge2023-maniphase2-783 --public`
+- Manipultaion Agent : `evalai push Dockerfile_Mani:latest --phase myochallenge2023-maniphase2-2105 --public`
 
-- Locomotion/Chase-Tag Agent: `evalai push Dockerfile_Loco:latest --phase myochallenge2023-locophase2-783 --public`
-
+- Locomotion/Chase-Tag Agent: `evalai push Dockerfile_Loco:latest --phase myochallenge2023-locophase2-2105 --public`
+ -->
 
 For more commands, please refer to [evalai-cli documentation](https://cli.eval.ai/) for additional commands.
 
