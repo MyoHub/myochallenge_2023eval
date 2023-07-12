@@ -4,14 +4,14 @@
 # 2023 NeurIPS - MyoChallenge
 
 <p align="center">
-  <img src='./images/challenge_tasks.png' alt="teaser results" width="50%"/>
+  <img src='./images/fig2.png' alt="teaser results" width="50%"/>
   <p align="center"><i>MyoChallenge Tasks</i></p>
 </p>
 
 Welcome to the [**2023 NeurIPS - MyoChallenge: Towards Human-Level Dexterity and Agility**](https://sites.google.com/view/myochallenge/myochallenge).
 This challenge consists of developing controllers for physiologically realistic musculoskeletal models of arm and leg to solve two tasks:
 
-- A) **Manipultaion task** reconfiguring the die to match the desired orientation (`myoChallengeManiP1-v0`)
+- A) **Manipulation task** reconfiguring the die to match the desired orientation (`myoChallengeManiP1-v0`)
 
 - B) **Locomotion/Chase-Tag task** involving simultaneous rotation of two free-floating spheres over the palm. (`myoChallengeChaseTagP1-v0`).
 
