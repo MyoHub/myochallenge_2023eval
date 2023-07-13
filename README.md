@@ -145,9 +145,9 @@ evalai push <image>:<tag> --phase <phase_name>
 Use --private or --public flag in the submission command to make the submission private or public respectively.
 
 for example, commands to upload agents for Phase 1 might look like:
-- Manipultaion Agent : `evalai push myochallenge2023eval-die_agent:latest --phase myochallenge2023-maniphase1-2105 --public`
+- Manipultaion Agent : `evalai push myochallengeeval_mani_agent:latest --phase myochallenge2023-maniphase1-2105 --public`
 
-- Locomotion/Chase-Tag Agent: `evalai push myochallenge2023eval-loco_agent:latest --phase myochallenge2023-locophase1-2105 --public`
+- Locomotion/Chase-Tag Agent: `evalai push myochallengeeval_loco_agent:latest --phase myochallenge2023-locophase1-2105 --public`
 
 <!-- and, for Phase 2 might look like:
 
