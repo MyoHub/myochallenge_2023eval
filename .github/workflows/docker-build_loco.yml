@@ -1,0 +1,39 @@
+name: Docker Build Test - Loco
+
+on: workflow_dispatch
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.10"
+
+    - name: Install evalAI
+      run: |
+        sudo apt-get install libxml2-dev libxslt-dev 
+        pip install "evalai>=1.3.13"
+
+    - name: Set EvalAI token
+      run: |
+        echo "The GitHub Action Secret will be masked:  "
+        echo ${{ secrets.EvalAI_token }}
+        echo "Trick to echo GitHub Actions Secret:  "
+        echo ${{secrets.EvalAI_token}} | sed 's/./& /g' 
+
+        evalai set_token ${{ secrets.EvalAI_token }}
+            
+    - name: Test that the registration was successful. MyoChallenge needs to be in the list returned
+      run: evalai challenges --participant
+    
+    - name: Build the Docker image
+      run: docker compose -f docker-compose-LocoAgent.yml build
+
+
+
