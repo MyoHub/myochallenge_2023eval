@@ -39,7 +39,7 @@ jobs:
         docker images
 
     - name: Push to evalai
-      run: evalai push myochallenge2023eval-die_agent:latest --phase myochallenge2023-maniphase1-2105 --private
+      run: evalai push mani_agent:latest --phase myochallenge2023-maniphase1-2105 --private
 
 
 

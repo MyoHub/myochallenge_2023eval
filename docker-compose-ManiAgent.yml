@@ -1,6 +1,7 @@
 version: '3'
 services:
-  die_agent:
+  mani_agent:
+    image: mani_agent
     hostname: agent
     env_file:
       - docker/agent/docker.env
