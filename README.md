@@ -17,7 +17,7 @@ This challenge consists of developing controllers for a physiologically realisti
 
 - B) **Locomotion/Chase-Tag task** Chase an opponent by controlling a high-dimensional bipedal model. (`myoChallengeChaseTagP1-v0`).
 
-
+The submission process for a random agent is ready to be used. This repository will be updated in the coming days with information on how to run [DEPRL](https://github.com/martius-lab/depRL) baselines and tutorials on how to customize the code to run your own solutions. Stay tuned!
 ## Submission
 We offer this year a simplified way of submitting solutions, based on GitHub actions, as well as the same process from the previous competition. Submission workflows are triggered automatically when new changes are pushed into your repository.
 
