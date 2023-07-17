@@ -9,4 +9,4 @@ RUN pip install --upgrade pip
 RUN pip install -r agent.txt
 RUN pip install torch --index-url https://download.pytorch.org/whl/cpu
 
-CMD [ "python", "agent_loco_random.py" ]
+CMD [ "python", "agent_loco_deprl.py" ]
