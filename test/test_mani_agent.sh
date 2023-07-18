@@ -8,7 +8,7 @@ python environment/test_mani_environment.py &
 
 # TO BE REPLACED WITH A DOCKER --> docker run myochallengeeval_mani_agent
 
-python agent/agent_mani_random.py
+python agent/agent_mani_deprl.py
 if [ $? -eq 0 ]; then
     printf "${GreenBK}Manipulation Agent script correctly connecting with the environment!${RC} \n"
 else

@@ -7,20 +7,20 @@ import numpy as np
 
 def get_custom_observation(rc):
     """
-    Use this function to create an observation vector from the 
+    Use this function to create an observation vector from the
     environment provided observation dict for your own policy.
-    By using the same keys as in your local training, you can ensure that 
+    By using the same keys as in your local training, you can ensure that
     your observation still works.
     """
     # example of obs_keys for deprl baseline
     obs_keys = [
-            'hand_qpos', 
-            'hand_qvel', 
-            'obj_pos', 
-            'goal_pos', 
-            'pos_err', 
-            'obj_rot', 
-            'goal_rot', 
+            'hand_qpos',
+            'hand_qvel',
+            'obj_pos',
+            'goal_pos',
+            'pos_err',
+            'obj_rot',
+            'goal_rot',
             'rot_err'
     ]
     obs_keys.append('act')
