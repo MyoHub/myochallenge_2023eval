@@ -9,6 +9,7 @@ python environment/test_loco_environment.py &
 # TO BE REPLACED WITH A DOCKER --> docker run myochallengeeval_loco_agent &
 
 python agent/agent_loco_deprl.py
+
 if [ $? -eq 0 ]; then
     printf "${GreenBK}Chase Tag Agent script correctly connecting with the environment!${RC} \n"
 else
