@@ -8,4 +8,9 @@ ADD requirements/agent.txt /
 RUN pip install --upgrade pip
 RUN pip install -r agent.txt
 RUN pip install torch --index-url https://download.pytorch.org/whl/cpu
+
+# Comment for deprl
 CMD [ "python", "agent_mani_random.py" ]
+
+# Comment out for deprl
+# CMD [ "python", "agent_mani_deprl.py" ]

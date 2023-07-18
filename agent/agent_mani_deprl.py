@@ -51,7 +51,7 @@ rc.set_observation_space(shape)
 ################################################
 ## A -replace with your trained policy.
 ## HERE an example from a previously trained policy with deprl is shown (see https://github.com/facebookresearch/myosuite/blob/main/docs/source/tutorials/4a_deprl.ipynb)
-## additional dependences such as gym and deprl might be needed
+## additional dependencies such as gym and deprl might be needed
 import deprl
 policy = deprl.load_baseline(DummyEnv(env_name='myoChallengeRelocateP1-v0', stub=rc))
 print('Relocate agent: policy loaded')
