@@ -5,8 +5,8 @@ numpy
 matplotlib
 tabulate
 
-# Comment out for deprl
-# deprl==0.1.7.1
+deprl==0.1.7.1
 
 # Add your own dependencies here
 # awesome_dependency==0.99
+

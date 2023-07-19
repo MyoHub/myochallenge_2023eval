@@ -1,0 +1,10 @@
+version: '3'
+services:
+  loco_agent:
+    image: loco_agent_deprl
+    hostname: agent
+    env_file:
+      - docker/agent/docker.env
+    build:
+      context: ./
+      dockerfile: docker/agent/Dockerfile_Loco_Deprl

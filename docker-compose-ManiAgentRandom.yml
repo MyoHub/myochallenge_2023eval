@@ -1,0 +1,10 @@
+version: '3'
+services:
+  mani_agent:
+    image: mani_agent_random
+    hostname: agent
+    env_file:
+      - docker/agent/docker.env
+    build:
+      context: ./
+      dockerfile: docker/agent/Dockerfile_Mani_Random
