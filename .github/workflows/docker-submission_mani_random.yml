@@ -1,4 +1,4 @@
-name: Docker Submission Mani
+name: Submission Mani Random
 
 on: workflow_dispatch
 

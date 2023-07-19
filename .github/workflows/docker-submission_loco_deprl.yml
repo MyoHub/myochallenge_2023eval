@@ -1,4 +1,4 @@
-name: Docker Submission Loco
+name: Submission Loco Deprl
 
 on: workflow_dispatch
 
