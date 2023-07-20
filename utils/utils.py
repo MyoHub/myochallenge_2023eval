@@ -80,3 +80,8 @@ class RemoteConnection():
         return obsvec
 
 
+class DummyEnv:
+    def __init__(self, env_name, stub):
+        self.env_name = env_name
+        self.observation_space = gym.spaces.Box(-np.inf, +np.inf, (stub.get_observation_space(),))
+        self.action_space = gym.spaces.Box(-1, 1, (stub.get_action_space(),))

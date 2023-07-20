@@ -1,0 +1,13 @@
+FROM python:3.8-slim-buster
+
+
+ENV PYTHONUNBUFFERED 1
+ADD ./agent /
+ADD ./utils /
+ADD requirements/agent_random.txt /
+RUN pip install --upgrade pip
+RUN pip install -r agent_random.txt
+RUN pip install torch --index-url https://download.pytorch.org/whl/cpu
+
+# Comment for deprl
+CMD [ "python", "agent_mani_random.py" ]

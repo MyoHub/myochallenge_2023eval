@@ -1,28 +1,33 @@
 import os
 import pickle
 import time
-from utils import RemoteConnection
+from utils import RemoteConnection, DummyEnv
 import numpy as np
+
 
 def get_custom_observation(rc):
     """
-    Use this function to create an observation vector from the 
+    Use this function to create an observation vector from the
     environment provided observation dict for your own policy.
-    By using the same keys as in your local training, you can ensure that 
+    By using the same keys as in your local training, you can ensure that
     your observation still works.
     """
     # example of obs_keys for deprl baseline
     obs_keys = [
-      'hand_qpos',
-      'hand_qvel',
-      'obj_pos',
-      'goal_pos',
+            'hand_qpos',
+            'hand_qvel',
+            'obj_pos',
+            'goal_pos',
+            'pos_err',
+            'obj_rot',
+            'goal_rot',
+            'rot_err'
     ]
     obs_keys.append('act')
 
     obs_dict = rc.get_obsdict()
     # add new features here that can be computed from obs_dict
-    obs_dict['time'] = np.array(obs_dict['time']).copy()
+    # obs_dict['qpos_without_xy'] = np.array(obs_dict['internal_qpos'][2:35].copy())
 
     return rc.obsdict2obsvec(obs_dict, obs_keys)
 
@@ -46,10 +51,10 @@ rc.set_observation_space(shape)
 ################################################
 ## A -replace with your trained policy.
 ## HERE an example from a previously trained policy with deprl is shown (see https://github.com/facebookresearch/myosuite/blob/main/docs/source/tutorials/4a_deprl.ipynb)
-## additional dependences such as gym and deprl might be needed
+## additional dependencies such as gym and deprl might be needed
 import deprl
-policy = deprl.load_baseline(rc)
-print('MANIPULATION agent: policy loaded')
+policy = deprl.load_baseline(DummyEnv(env_name='myoChallengeRelocateP1-v0', stub=rc))
+print('Relocate agent: policy loaded')
 ################################################
 
 
@@ -63,7 +68,7 @@ while not flag_completed:
     while not flag_trial :
 
         if counter == 0:
-            print('MANIPULATION: Trial #'+str(repetition)+'Start Resetting the environment and get 1st obs')
+            print('Relocate: Trial #'+str(repetition)+'Start Resetting the environment and get 1st obs')
             obs = rc.reset()
 
         ################################################
@@ -79,6 +84,6 @@ while not flag_completed:
         flag_trial = base["feedback"][2]
         flag_completed = base["eval_completed"]
 
-        print(f"MANIPULATION: Agent Feedback iter {counter} -- trial solved: {flag_trial} -- task solved: {flag_completed}")
+        print(f"Relocate: Agent Feedback iter {counter} -- trial solved: {flag_trial} -- task solved: {flag_completed}")
         print("*" * 100)
         counter +=1

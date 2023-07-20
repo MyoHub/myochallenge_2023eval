@@ -1,8 +1,9 @@
 import os
 import pickle
 import time
-from utils import RemoteConnection
+from utils import RemoteConnection, DummyEnv
 import numpy as np
+
 
 def get_custom_observation(rc):
     """
@@ -15,6 +16,12 @@ def get_custom_observation(rc):
     obs_keys = [
       'internal_qpos',
       'internal_qvel',
+      'grf',
+      'torso_angle',
+      'opponent_pose',
+      'opponent_vel',
+      'model_root_pos',
+      'model_root_vel',
       'muscle_length',
       'muscle_velocity',
       'muscle_force',
@@ -23,7 +30,7 @@ def get_custom_observation(rc):
 
     obs_dict = rc.get_obsdict()
     # add new features here that can be computed from obs_dict
-    obs_dict['qpos_without_xy'] = np.array(obs_dict['internal_qpos'][2:35].copy())
+    # obs_dict['qpos_without_xy'] = np.array(obs_dict['internal_qpos'][2:35].copy())
 
     return rc.obsdict2obsvec(obs_dict, obs_keys)
 
@@ -47,9 +54,9 @@ rc.set_observation_space(shape)
 ################################################
 ## A -replace with your trained policy.
 ## HERE an example from a previously trained policy with deprl is shown (see https://github.com/facebookresearch/myosuite/blob/main/docs/source/tutorials/4a_deprl.ipynb)
-## additional dependences such as gym and deprl might be needed
+## additional dependencies such as gym and deprl might be needed
 import deprl
-policy = deprl.load_baseline(rc)
+policy = deprl.load_baseline(DummyEnv(env_name='myoChallengeChaseTagP1-v0', stub=rc))
 print('CHASE-TAG agent: policy loaded')
 ################################################
 

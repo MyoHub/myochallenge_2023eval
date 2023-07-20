@@ -1,0 +1,10 @@
+grpcio==1.47.0
+grpcio-tools==1.47.0
+protobuf==3.20.*
+numpy
+matplotlib
+tabulate
+
+
+# Add your own dependencies here
+# awesome_dependency==0.99

@@ -4,3 +4,9 @@ protobuf==3.20.*
 numpy
 matplotlib
 tabulate
+
+deprl==0.1.7.1
+
+# Add your own dependencies here
+# awesome_dependency==0.99
+
