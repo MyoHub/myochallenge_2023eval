@@ -17,7 +17,7 @@ This challenge consists of developing controllers for a physiologically realisti
 
 - B) **Locomotion/Chase-Tag task** Chase an opponent by controlling a high-dimensional bipedal model. (`myoChallengeChaseTagP1-v0`).
 
-To load the challenges, you can try this code:
+To load the challenges, you need to install the `myosuite==1.7.0`, after which you can try this code:
 ```
 import gym
 import myosuite
@@ -35,11 +35,26 @@ for i in range(2000):
 
 You can also use `env = gym.make('myoChallengeRelocateP1-v0')` for the manipulation task.
 
-The submission process for a random agent is ready to be used. This repository will be updated in the coming days with information on how to run [DEPRL](https://github.com/martius-lab/depRL) baselines and tutorials on how to customize the code to run your own solutions. Stay tuned!
-
 ## Submission
-We offer this year a simplified way of submitting solutions, based on GitHub actions, as well as the same process from the previous competition. Submission workflows are triggered automatically when new changes are pushed into your repository.
+We offer a simplified way of submitting solutions this year, based on GitHub actions, as well as the DIY-submission-process from the previous year. A step-by-step tutorial on this will be released shortly, while we give a short description for experienced users in this README.
 
+### Github actions
+Github-actions are automated processes that get executed on a Github web-server. They allow you to run code in a reproducible way and can simplify repetitive processes. 
+We created a repository template (the one you're reading right now) which you can use to create your own repo, after which you can then setup your evalai account and use it to automatically submit your solutions, so you don't have to mess around with docker containers.
+
+First, you need to create an account for [eval-ai](https://eval.ai/) and create a team. Afterwards, head to the [MyoChallenge2023](https://eval.ai/web/challenges/challenge-page/2105/overview) and click on participate. You can now see in the participate area (or in your evalai account settings) your personal token.
+This token will be needed so that the github repo can submit solutions in your name. 
+Now, in order for your code to stay private, you can create a repository from our template by looking at the top of this repository and click on "Use this template" -> "Create your own repository" and then choosing the private option.
+
+Now navigate to your new personal github repository that you created from the template. In the top bar, click on "Settings" and then look for "Secrets and variables" -> "Actions". Here, click on "New repository secret". As the name you can put "EvalAI_token", while the Secret should be your evalai access token.
+That's it! 
+
+Now you can click on "Actions" in the top-bar of your repo, and you will see the github-actions we prepared. You can use "Docker Build Test" Loco or Mani to test building docker containers for random agents.
+If you want to submit something, you can use "Submission Loco Deprl" or similar for Mani and for random agents. Try clicking on one of them and then on "Run workflow" on the right. This should show up as a private submission in your evalai leaderboard.
+
+You can then edit the prepared files for [deprl](https://github.com/MyoHub/myoChallenge2023Eval/blob/main/agent/agent_loco_deprl.py) or [random](https://github.com/MyoHub/myoChallenge2023Eval/blob/main/agent/agent_loco_random.py) agents and use them to import your own policies. They also contain other helpful functions.
+
+### DIY Submission Process
 For those that are familiar with evalai-cli processes, submission can be done with the following steps. First install the [prerequisites](#Prerequisites) and then you can follow the 4 steps listed below to upload a solution in EvalAI.
 
 ``` bash
