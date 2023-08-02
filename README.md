@@ -17,7 +17,26 @@ This challenge consists of developing controllers for a physiologically realisti
 
 - B) **Locomotion/Chase-Tag task** Chase an opponent by controlling a high-dimensional bipedal model. (`myoChallengeChaseTagP1-v0`).
 
+To load the challenges, you can try this code:
+```
+import gym
+import myosuite
+
+env = gym.make('myoChallengeChaseTagP1-v0')
+state = env.reset()
+for i in range(2000):
+    action = env.action_space.sample()
+    next_state, reward, done, info = env.step(action)
+    env.renderer.render_to_window()
+    state = next_state
+    if done:
+        break
+```
+
+You can also use `env = gym.make('myoChallengeRelocateP1-v0')` for the manipulation task.
+
 The submission process for a random agent is ready to be used. This repository will be updated in the coming days with information on how to run [DEPRL](https://github.com/martius-lab/depRL) baselines and tutorials on how to customize the code to run your own solutions. Stay tuned!
+
 ## Submission
 We offer this year a simplified way of submitting solutions, based on GitHub actions, as well as the same process from the previous competition. Submission workflows are triggered automatically when new changes are pushed into your repository.
 
