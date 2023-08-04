@@ -1,7 +1,7 @@
 # Run the baselines
 This year we provide several baselines:
 * Manipulation track and locomotion track baselines with [deprl](https://github.com/martius-lab/depRL), also see the [docs](https://deprl.readthedocs.io/en/latest/myo_baselines.html).
-* A reflex-based locomotion controller, see [here](https://myosuite.readthedocs.io/en/latest/tutorials.html#load-myoreflex-baseline).
+* A reflex-based locomotion controller, see [here](https://myosuite.readthedocs.io/en/latest/baselines.html#myolegreflex-baseline).
 
 These baselines will not give you good task performance or win the challenge for you, but they provide a nice starting point.
 
