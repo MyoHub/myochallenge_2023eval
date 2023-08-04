@@ -5,7 +5,7 @@
 # 2023 NeurIPS - MyoChallenge
 
 <p align="center">
-  <img src='./images/challenge_task_new.png' alt="teaser results" width="50%"/>
+  <img src='./images/myochallenges.png' alt="teaser results" width="50%"/>
   <p align="center"><i>MyoChallenge Tasks</i></p>
 </p>
 
