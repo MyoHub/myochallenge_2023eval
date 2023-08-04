@@ -21,7 +21,7 @@ They both are available with `myosuite==1.7.0`, please refer to the documentatio
 
 In order to submit your solutions, we offer 2 approaches: [GitHub actions](#Github-actions) or [DIY Submission Process](#DIY-Submission-Process)
 
-### Github actions
+### Github actions (detailed description [here](./GHaction_Submission.md))
 1. Register an account on eval-ai and obtain a `personal token`
 2. Clone this template and add the eval-ai `personal token` as "EvalAI_token" (in "Secrets and variables" -> "Actions" -> "New repository secret")
 3. Trigger subission by selecting "Run workflow" in the ["Submission Loco Random" Action](https://github.com/MyoHub/myoChallenge2023Eval/actions/workflows/docker-submission_loco_random.yml)
