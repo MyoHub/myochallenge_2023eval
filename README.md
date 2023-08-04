@@ -1,6 +1,7 @@
 [![Supported by MyoSuite](https://img.shields.io/static/v1?label=Supported%20by&message=MyoSuite&color=informational&link=https://github.com/facebookresearch/myosuite)](https://github.com/facebookresearch/myosuite)
 [![Slack](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white)](https://myosuite.slack.com)
 [![Twitter Follow](https://img.shields.io/twitter/follow/MyoSuite?style=social)](https://twitter.com/MyoSuite)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Az9B0tOJmm962v1PjjRUTEQGCY5ebqQG)
 
 # 2023 NeurIPS - MyoChallenge
 
@@ -26,7 +27,7 @@ This repository is primarily centered around the submission of your solution, bu
 * Train an agent: We provide support for [stable-baselines](https://stable-baselines3.readthedocs.io/en/master/) and for [deprl](https://github.com/martius-lab/depRL) policies. Check out the respective documentation to train an agent.
 * Get ready for submission: We offer 2 approaches, [GitHub actions](#github-actions) or [DIY Submission](#diy-submission).
 
-An extensive colab tutorial with detailed instructions is available [here](https://colab.research.google.com/drive/1Az9B0tOJmm962v1PjjRUTEQGCY5ebqQG?usp=sharing).
+An extensive colab tutorial with detailed instructions is available [here](https://colab.research.google.com/drive/1Az9B0tOJmm962v1PjjRUTEQGCY5ebqQG).
 
 ### Github actions 
 (detailed description [here](./tutorials/GHaction_Submission.md))
@@ -54,9 +55,6 @@ docker build -f docker/agent/Dockerfile_Mani . -t myochallengeeval_mani_agent
 evalai push myochallengeeval_mani_agent:latest --phase myochallenge2023-maniphase1-2105 --public
 
 ```
-
-
-
 
 #### KNOWN ISSUES
 
