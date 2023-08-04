@@ -40,4 +40,4 @@ Navigate to the new personal github repository that you created from the templat
 
 You can then edit the prepared files for [deprl](https://github.com/MyoHub/myoChallenge2023Eval/blob/main/agent/agent_loco_deprl.py) or [random](https://github.com/MyoHub/myoChallenge2023Eval/blob/main/agent/agent_loco_random.py) agents and use them to import your own policies. They also contain other helpful functions.
 
-Pushing your changes and policies to the `main` branch will allow to submit them via the github actions. For local development, we recommend to follow the [steps listed in the Readme.md](/#step-by-step)
+Pushing your changes and policies to the `main` branch will allow to submit them via the github actions. For local development, we recommend to follow the DIY submission [instructions](./DIY_Submission.md).
