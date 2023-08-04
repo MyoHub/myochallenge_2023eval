@@ -24,7 +24,7 @@ In order to submit your solutions, we offer 2 approaches: [GitHub actions](#gith
 ### Github actions 
 (detailed description [here](./GHaction_Submission.md))
 1. [Register an account on Eval-AI](https://evalai.readthedocs.io/en/latest/participate.html) and obtain a `personal token` (on profile page -> "Get your Auth Token")
-2. Clone this template and add the eval-ai `personal token` as "EvalAI_token" (in "Secrets and variables" -> "Actions" -> "New repository secret")
+2. [Clone this template](https://github.com/new?template_name=myoChallenge2023Eval&template_owner=MyoHub) and add the eval-ai `personal token` as "EvalAI_token" (in "Secrets and variables" -> "Actions" -> "New repository secret")
 3. Trigger subission by selecting "Run workflow" in the ["Submission Loco Random" Action](https://github.com/MyoHub/myoChallenge2023Eval/actions/workflows/docker-submission_loco_random.yml)
 
 To customize your solution, please follow the [steps listed below](#step-by-step) below.
