@@ -19,17 +19,18 @@ This challenge consists of developing controllers for a physiologically realisti
 
 They both are available with `myosuite==1.7.0`, please refer to the documentation on the [MyoSuite API](https://github.com/facebookresearch/myoSuite)
 
-In order to submit your solutions, we offer 2 approaches: [GitHub actions](#Github-actions) or [DIY Submission Process](#DIY-Submission-Process)
+In order to submit your solutions, we offer 2 approaches: [GitHub actions](#github-actions) or [DIY Submission](#diy-submission)
 
-### Github actions (detailed description [here](./GHaction_Submission.md))
-1. Register an account on eval-ai and obtain a `personal token`
+### Github actions 
+(detailed description [here](./GHaction_Submission.md))
+1. [Register an account on Eval-AI](https://evalai.readthedocs.io/en/latest/participate.html) and obtain a `personal token`
 2. Clone this template and add the eval-ai `personal token` as "EvalAI_token" (in "Secrets and variables" -> "Actions" -> "New repository secret")
 3. Trigger subission by selecting "Run workflow" in the ["Submission Loco Random" Action](https://github.com/MyoHub/myoChallenge2023Eval/actions/workflows/docker-submission_loco_random.yml)
 
-Follow the steps below to customize your solution.
+To customize your solution, please follow the [steps listed below](#step-by-step) below.
 
-### DIY Submission Process
-For those that are familiar with evalai-cli processes, submission can be done with the following steps. First install the [prerequisites](#Prerequisites) and then you can follow the 4 steps listed below to upload a solution in EvalAI.
+### DIY Submission
+This solution requires to set-up the project locally and compile docker containers. First install the [prerequisites](#Prerequisites) and then you can follow the [4 steps listed below](#step-by-step) to upload a solution in EvalAI. In short, the upload of a solution will follow this sequence: 
 
 ``` bash
 # Step 1 and 2 -- Train your model and personalize the agent evaluation script.
@@ -45,7 +46,8 @@ evalai push myochallengeeval_mani_agent:latest --phase myochallenge2023-maniphas
 
 ```
 
-## Prerequisites
+## Step-by-Step
+### Prerequisites
 <details closed>
 <summary>Install Docker compiler</summary>
 
@@ -92,14 +94,14 @@ source ./setup.sh
 ```
 </details>
 
-## STEP 1: Train your model
+### STEP 1: Train your model
 The API to interface with the environment is via [MyoSuite](https://github.com/facebookresearch/myosuite)).
 
 More information on the training and customization are provided [here](./agent/TrainingPolicies.md)
 
 <!-- For this challenge you might want to try the `myoChallengeManiP1-v0` for a quick test of training a policy (it should take ~2h on a regular laptop) and test the evaluation process. -->
 
-## STEP 2: Customize Agent Script
+### STEP 2: Customize Agent Script
 We provide 2 templates to describe how the agent will communicate with the environment during the evaluation.
 -  Manipulation script ([agent_mani.py](/agent/agent_mani.py))
 -  Locomotion/Chase-Tag script ([agent_loco.py](/agent/agent_loco.py))
@@ -115,7 +117,7 @@ Once you have finished customizing the scripts, testing between the agent and en
 
 Upon successful testing, it is possible to submit the solution following next steps.
 
-## STEP 3: Build a docker container with the agent
+### STEP 3: Build a docker container with the agent
 The evaluation will be based on the model submitted as a docker container. It is possible to build the docker in two ways with either directly docker build (Suggested method) or with docker-compose (Alternative method, this will require to install [docker-compose](https://docs.docker.com/compose/install/))
 <details open>
 <summary>Suggested Method: Using `docker build`</summary>
@@ -143,7 +145,7 @@ docker-compose -f docker-compose-LocoAgent.yml up --build
 </br>
 </details>
 
-## Step 4: Upload the docker container on evalAI for evaluation
+### Step 4: Upload the docker container on evalAI for evaluation
 
 Push the docker image to [EvalAI docker registry](https://eval.ai/web/challenges/challenge-page/2105/submission) (it is possible to get the information about the image and TAG with the command `docker images`)
 
@@ -169,7 +171,7 @@ For more commands, please refer to [evalai-cli documentation](https://cli.eval.a
 
 
 
-### KNOWN ISSUES
+#### KNOWN ISSUES
 
 
 If error to install `grpcio`, a solution is to install it manually
