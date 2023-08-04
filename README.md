@@ -24,9 +24,9 @@ This repository is primarily centered around the submission of your solution, bu
 * Getting started - Take a look at the task [here](./tutorials/run_the_tasks.md) and refer to the [documentation](https://myosuite.readthedocs.io/en/latest/tutorials.html) for more details.
 * Run the pre-trained baselines: Look at the examples in this [repo](./tutorials/run_the_baselines.md), refer to the MyoSuite [documentation](https://myosuite.readthedocs.io/en/latest/baselines.html#dep-rl-baseline) for more baselines such as the reflex-controller or take a look at the [deprl](https://deprl.readthedocs.io/en/latest/myo_baselines.html#) docs.
 * Train an agent: We provide support for [stable-baselines](https://stable-baselines3.readthedocs.io/en/master/) and for [deprl](https://github.com/martius-lab/depRL) policies. Check out the respective documentation to train an agent.
-* Get ready for submission: We offer 2 approaches, [GitHub actions](#github-actions) or [DIY Submission](#diy-submission)
+* Get ready for submission: We offer 2 approaches, [GitHub actions](#github-actions) or [DIY Submission](#diy-submission).
 
-An extensive colab tutorial with detailed instructions will be added here.
+An extensive colab tutorial with detailed instructions is available [here](https://colab.research.google.com/drive/1Az9B0tOJmm962v1PjjRUTEQGCY5ebqQG?usp=sharing).
 
 ### Github actions 
 (detailed description [here](./tutorials/GHaction_Submission.md))
