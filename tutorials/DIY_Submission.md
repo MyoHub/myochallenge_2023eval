@@ -48,14 +48,14 @@ source ./setup.sh
 ```
 </details>
 
-### STEP 1: Train your model
+## STEP 1: Train your model
 The API to interface with the environment is explained in the MyoSuite [docs](https://myosuite.readthedocs.io/en/latest/).
 
 More information on the training and customization are provided [here](./agent/TrainingPolicies.md)
 
 <!-- For this challenge you might want to try the `myoChallengeRelocateP1-v0` for a quick test of training a policy (it should take ~2h on a regular laptop) and test the evaluation process. -->
 
-### STEP 2: Customize Agent Script
+## STEP 2: Customize Agent Script
 We provide 4 templates to describe how the agent will communicate with the environment during the evaluation.
 -  Manipulation - random ([agent_mani_random.py](../agent/agent_mani_random.py))
 -  Locomotion/Chase-Tag - random ([agent_loco_random.py](../agent/agent_loco_random.py))
@@ -77,7 +77,7 @@ Once you have finished customizing the scripts, testing between the agent and en
 
 Upon successful testing, it is possible to submit the solution following next steps.
 
-### STEP 3: Build a docker container with the agent
+## STEP 3: Build a docker container with the agent
 The evaluation will be based on the model submitted as a docker container. It is possible to build the docker in two ways with either directly docker build (Suggested method) or with docker-compose (Alternative method, this will require to install [docker-compose](https://docs.docker.com/compose/install/))
 <details open>
 <summary>Suggested Method: Using `docker build`</summary>
@@ -105,7 +105,7 @@ docker-compose -f docker-compose-LocoAgent.yml up --build
 </br>
 </details>
 
-### Step 4: Upload the docker container on evalAI for evaluation
+## Step 4: Upload the docker container on evalAI for evaluation
 
 Push the docker image to [EvalAI docker registry](https://eval.ai/web/challenges/challenge-page/2105/submission) (it is possible to get the information about the image and TAG with the command `docker images`)
 
