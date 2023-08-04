@@ -29,7 +29,6 @@ Navigate to the new personal github repository that you created from the templat
   | ![MyoChal_SetSecrets](images/MyoChal_SetSecrets.png) | ![MyoChal_Secret](images/MyoChal_Secret.png) |
   |-|-|
   Navigate to repository secret page | Enter your EvalAI access token here
-  |-|-|
 
 - click on "Actions" in the top-bar of your repo, and you will see the github-actions we prepared. You can use "Docker Build Test" [Loco](https://github.com/MyoHub/myoChallenge2023Eval/actions/workflows/docker-build_loco.yml) or [Mani](https://github.com/MyoHub/myoChallenge2023Eval/actions/workflows/docker-build_mani.yml) to test building docker containers for random agents.
 
