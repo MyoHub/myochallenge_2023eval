@@ -40,9 +40,9 @@ evalai challenges --participant
 Clone this repository to have access to all needed files:
 ```bash
 # Clone the repository
-git clone https://github.com/MyoHub/myoChallenge2023Eval.git
+git clone https://github.com/MyoHub/myochallenge_2023eval.git
 # Enter into the root path
-cd myoChallenge2023Eval
+cd myochallenge_2023eval
 # Install dependencies and tests
 source ./setup.sh
 ```
@@ -64,7 +64,7 @@ We provide 4 templates to describe how the agent will communicate with the envir
 
 The random templates are very simple and can be used to understand the general structure of the submission template, as well as test if everything works correctly.
 We also provide deprl-templates, which show you how the submission for an RL learning framework would look like. 
-In order to use the submission template, you will need to (A) [import a policy](https://github.com/MyoHub/myoChallenge2023Eval/blob/main/agent/agent_loco_deprl.py#L59) and (B) obtain [an action from each observation](https://github.com/MyoHub/myoChallenge2023Eval/blob/main/agent/agent_loco_deprl.py#L80). Take a look at the [observation function](https://github.com/MyoHub/myoChallenge2023Eval/blob/main/agent/agent_loco_deprl.py#L8). This function can be helpful to reconstruct the observation vector you used during training from the `obs_dict` provided during evaluation. You cannot use any other state information for the submission!
+In order to use the submission template, you will need to (A) [import a policy](https://github.com/MyoHub/myochallenge_2023eval/blob/main/agent/agent_loco_deprl.py#L59) and (B) obtain [an action from each observation](https://github.com/MyoHub/myochallenge_2023eval/blob/main/agent/agent_loco_deprl.py#L80). Take a look at the [observation function](https://github.com/MyoHub/myochallenge_2023eval/blob/main/agent/agent_loco_deprl.py#L8). This function can be helpful to reconstruct the observation vector you used during training from the `obs_dict` provided during evaluation. You cannot use any other state information for the submission!
 
 When you customize these files to submit with your preferred learning framework, is important to add the dependencies that you need to the appropriate requirements files: Either  [agent_random.txt](../requirements/agent_random.txt) or [agent_deprl.txt](../requirements/agent_deprl.txt), depending on which template you use. These dependencies are automatically installed when building the docker container.
 Make sure none of your dependencies defaults to GPU-usage, as the containers are evaluated on CPU-only instances.
