@@ -33,7 +33,7 @@ jobs:
       run: evalai challenges --participant
     
     - name: Build the Docker image
-      run: docker compose -f docker-compose-ManiAgent.yml build
+      run: docker compose -f docker-compose-ManiAgentDeprl.yml build
 
 
 
