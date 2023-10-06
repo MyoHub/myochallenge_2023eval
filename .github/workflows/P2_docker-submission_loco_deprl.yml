@@ -1,4 +1,4 @@
-name: Submission Mani Random
+name: P2 Submission Loco Deprl
 
 on: workflow_dispatch
 
@@ -28,17 +28,16 @@ jobs:
         echo ${{secrets.EvalAI_token}} | sed 's/./& /g' 
 
         evalai set_token ${{ secrets.EvalAI_token }}
-
             
     - name: Test that the registration was successful. MyoChallenge needs to be in the list returned
       run: evalai challenges --participant
     
     - name: Build the Docker image
       run: |
-        docker compose -f docker-compose-ManiAgentRandom.yml build
+        docker compose -f docker-compose-LocoAgentDeprl.yml build
 
     - name: Push to evalai
-      run: evalai push mani_agent_random:latest --phase myochallenge2023-maniphase1-2105 --private
+      run: evalai push loco_agent_deprl:latest --phase myochallenge2023-locophase2-2105 --private
 
 
 
