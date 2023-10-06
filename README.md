@@ -17,7 +17,7 @@ This challenge consists of developing controllers for a physiologically realisti
 
 - B) **Locomotion/Chase-Tag task** -- Chase an opponent (`myoChallengeChaseTagP1-v0`).
 
-They both are available with `myosuite==1.7.0`.
+[⚠️ Important!] For Phase 2 environment, please upgrade to MyoSuite >= 1.2.3
 
 ## Overview
 This repository is primarily centered around the submission of your solution, but we also created documentation to help you with:
