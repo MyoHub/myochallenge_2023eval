@@ -17,7 +17,7 @@ This challenge consists of developing controllers for a physiologically realisti
 
 - B) **Locomotion/Chase-Tag task** -- Chase an opponent (`myoChallengeChaseTagP1-v0`).
 
-They both are available with `myosuite==1.7.0`.
+[⚠️ Important!] For Phase 2 environment, please upgrade to MyoSuite >= 2.1.2
 
 ## Overview
 This repository is primarily centered around the submission of your solution, but we also created documentation to help you with:
@@ -51,7 +51,7 @@ sh ./test/test_mani_agent.sh
 docker build -f docker/agent/Dockerfile_Mani . -t myochallengeeval_mani_agent
 
 # Step 4: Upload your policy
-evalai push myochallengeeval_mani_agent:latest --phase myochallenge2023-maniphase1-2105 --public
+evalai push myochallengeeval_mani_agent:latest --phase myochallenge2023-maniphase2-2105 --public
 
 ```
 
